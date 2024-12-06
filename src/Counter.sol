@@ -1,14 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract Counter {
-    uint256 public number;
+import {ICounter} from "./interfaces/ICounter.sol";
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
-
-    function increment() public {
-        number++;
+contract Counter is ICounter {
+    /// @inheritdoc ICounter
+    function testFunction() public pure returns (uint256) {
+        return 100;
     }
 }
