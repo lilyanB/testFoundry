@@ -5,5 +5,5 @@ library ConstantsLibrary {
     /**
      * @notice Example of constants use in {testFunction}.
      */
-    uint256 internal constant TEST_CONST = 100;
+    uint256 internal constant TEST_CONST = 10;
 }
