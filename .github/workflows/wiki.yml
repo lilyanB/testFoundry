@@ -1,9 +1,9 @@
 name: Generate Wiki from GitHub Docs
 
 on:
-  push:
-    branches:
-      - main
+    push:
+      branches: [ "main" ]
+      paths: ["documentation/**", ".github/workflows/wiki.yml"]
 jobs:
     update-wiki:
       runs-on: ubuntu-latest
