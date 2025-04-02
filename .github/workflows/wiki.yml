@@ -12,7 +12,7 @@ jobs:
       - name: Sync Wiki
         uses: cmbrose/github-docs-to-wiki@v0.24
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.MY_GITHUB_PAT }}
           defaultBranch: master
           rootDocsFolder: ./documentation
           convertRootReadmeToHomePage: true
