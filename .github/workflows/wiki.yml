@@ -14,7 +14,7 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           defaultBranch: master
-          rootDocsFolder: ./docs
+          rootDocsFolder: ./documentation
           convertRootReadmeToHomePage: true
           useHeaderForWikiName: true
           customCommitMessageFormat: ':gem: Chore: Sync Docs to GH Wiki'
