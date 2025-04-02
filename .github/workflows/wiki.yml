@@ -1,4 +1,4 @@
-name: Generate Wiki from GitHub Docs
+name: Generate Wiki
 
 on:
     push:
