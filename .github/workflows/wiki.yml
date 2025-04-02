@@ -1,0 +1,32 @@
+name: Generate Wiki from GitHub Docs
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  generate-wiki:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+
+    - name: Generate Wiki Pages
+      uses: cmbrose/github-docs-to-wiki@v0.20
+      with:
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
+        rootDocsFolder: './documentation'
+
+    - name: Push Changes to Wiki Repo
+      run: |
+        git clone https://github.com/${{ github.repository }}.wiki.git
+        cd your-repo.wiki
+        git add .
+        git commit -m "Update Wiki"
+        git push origin main
